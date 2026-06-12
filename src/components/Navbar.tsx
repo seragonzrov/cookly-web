@@ -40,7 +40,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="navbar">
+    <nav className="side-nav">
       <div className="navbar-logo">
         <img src="/logo.png" alt="Cookly" className="navbar-img" />
         <span className="nav-label">Cookly</span>

@@ -64,15 +64,15 @@ export default function RecipeDetail() {
         <img src={meal.strMealThumb} alt={meal.strMeal} className="detail-img" />
         {(categoryInfo || areaLabel) && (
           <div className="detail-img-badges">
-            {categoryInfo && <span className="detail-img-badge">{categoryInfo.emoji} {categoryInfo.label}</span>}
-            {areaLabel && <span className="detail-img-badge">{areaLabel}</span>}
+            {categoryInfo && <span className="badge bg-primary detail-img-badge">{categoryInfo.emoji} {categoryInfo.label}</span>}
+            {areaLabel && <span className="badge bg-primary detail-img-badge">{areaLabel}</span>}
           </div>
         )}
       </div>
 
       <div className="detail-header">
         <h1>{meal.strMeal}</h1>
-        <button className="fav-btn" onClick={toggleFavorite}>
+        <button className="btn btn-primary d-flex align-items-center gap-2 flex-shrink-0" onClick={toggleFavorite}>
           <Heart size={15} fill={isFavorite ? '#fff' : 'none'} />
           {isFavorite ? 'Guardado' : 'Guardar'}
         </button>

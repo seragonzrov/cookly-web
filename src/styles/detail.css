@@ -1,0 +1,145 @@
+.detail-img-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.detail-img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.detail-img-badges {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.detail-img-badge {
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  font-size: 0.82rem !important;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.detail-header h1 {
+  font-size: 2rem;
+}
+
+.detail-section-title {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.ingredient-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.ingredient-item:last-child {
+  border-bottom: none;
+}
+
+.ingredient-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.ingredient-name {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.ingredient-measure {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.step-item:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 4px;
+  color: var(--text);
+}
+
+.youtube-link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.youtube-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.youtube-link:hover {
+  text-decoration: underline;
+}
+
+.youtube-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

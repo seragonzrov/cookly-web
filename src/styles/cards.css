@@ -1,0 +1,124 @@
+.category-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.category-arrow {
+  background: var(--surface);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  color: var(--text);
+}
+
+.category-arrow:hover {
+  background: var(--surface-2);
+}
+
+.category-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-bar .btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.meal-card {
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.meal-card-fav-btn {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+}
+
+.meal-card-heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--accent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.meal-card-heart--outline {
+  color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+.meal-card-heart-shadow {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  color: #fff;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.meal-card:hover {
+  transform: translateY(-4px);
+}
+
+.meal-card .card-img-top {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Skeleton */
+@keyframes shimmer {
+  0% { background-position: -600px 0 }
+  100% { background-position: 600px 0 }
+}
+
+.meal-card-skeleton {
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(90deg, var(--skeleton-1) 25%, var(--skeleton-2) 50%, var(--skeleton-1) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin: 12px 10px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--skeleton-1) 25%, var(--skeleton-2) 50%, var(--skeleton-1) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}

@@ -20,7 +20,7 @@ export default function Landing({ onDismiss }: Props) {
 
         <div className="landing-features">
           {features.map((f, i) => (
-            <div key={i} className="landing-feature">
+            <div key={i} className="card landing-feature">
               <span className="landing-feature-icon">{f.icon}</span>
               <span className="landing-feature-title">{f.title}</span>
               <span className="landing-feature-desc">{f.desc}</span>
@@ -28,7 +28,7 @@ export default function Landing({ onDismiss }: Props) {
           ))}
         </div>
 
-        <button className="landing-btn" onClick={onDismiss}>
+        <button className="btn btn-light fw-bold rounded-pill px-5 py-3 landing-btn" onClick={onDismiss}>
           Empezar
         </button>
 

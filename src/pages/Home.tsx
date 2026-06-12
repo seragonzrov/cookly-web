@@ -85,7 +85,7 @@ export default function Home() {
     next ? sessionStorage.setItem('lastCategory', next) : sessionStorage.removeItem('lastCategory')
   }
 
-return (
+  return (
     <div className="page">
       <h1 className="logo">Cookly</h1>
 
@@ -97,7 +97,7 @@ return (
           {categories.map((cat: any) => (
             <button
               key={cat.strCategory}
-              className={`category-btn ${selectedCategory === cat.strCategory ? 'active' : ''}`}
+              className={`btn btn-sm rounded-pill ${selectedCategory === cat.strCategory ? 'btn-primary' : 'btn-light'}`}
               onClick={() => handleCategory(cat.strCategory)}
             >
               {categoryTranslations[cat.strCategory]?.emoji} {categoryTranslations[cat.strCategory]?.label || cat.strCategory}
@@ -115,32 +115,37 @@ return (
           : 'Recetas Populares'}
       </h2>
 
-      <div className="meal-grid">
+      <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3">
         {loading
           ? Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="meal-card-skeleton">
-                <div className="skeleton-img" />
-                <div className="skeleton-text" />
+              <div key={i} className="col">
+                <div className="meal-card-skeleton">
+                  <div className="skeleton-img" />
+                  <div className="skeleton-text" />
+                </div>
               </div>
             ))
           : meals.map(meal => (
-              <div
-                key={meal.idMeal}
-                className="meal-card"
-                onClick={() => navigate(`/recipe/${meal.idMeal}`)}
-              >
-                <img src={meal.strMealThumb} alt={meal.strMeal} />
-                <button className="meal-card-fav-btn" onClick={(e) => toggleFavorite(meal, e)}>
-                  {favoriteIds.has(meal.idMeal) ? (
-                    <>
-                      <Heart className="meal-card-heart-shadow" size={22} fill="currentColor" />
-                      <Heart className="meal-card-heart" size={22} fill="currentColor" />
-                    </>
-                  ) : (
-                    <Heart className="meal-card-heart meal-card-heart--outline" size={22} fill="none" />
-                  )}
-                </button>
-                <p>{meal.strMeal}</p>
+              <div key={meal.idMeal} className="col">
+                <div
+                  className="card meal-card h-100"
+                  onClick={() => navigate(`/recipe/${meal.idMeal}`)}
+                >
+                  <img className="card-img-top" src={meal.strMealThumb} alt={meal.strMeal} />
+                  <button className="meal-card-fav-btn" onClick={(e) => toggleFavorite(meal, e)}>
+                    {favoriteIds.has(meal.idMeal) ? (
+                      <>
+                        <Heart className="meal-card-heart-shadow" size={22} fill="currentColor" />
+                        <Heart className="meal-card-heart" size={22} fill="currentColor" />
+                      </>
+                    ) : (
+                      <Heart className="meal-card-heart meal-card-heart--outline" size={22} fill="none" />
+                    )}
+                  </button>
+                  <div className="card-body p-2">
+                    <p className="card-text small fw-semibold mb-0">{meal.strMeal}</p>
+                  </div>
+                </div>
               </div>
             ))
         }
