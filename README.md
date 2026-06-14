@@ -142,6 +142,11 @@ tests/integration/Favorites.test.tsx — 4 tests
 
 ---
 
+## Drive
+
+https://drive.google.com/drive/u/1/folders/15wsQlmQ-KPxcw2WO-o6jPpvPswFDZwRU
+---
+
 ## Herramientas de IA utilizadas
 
 - **Claude (Anthropic)** — arquitectura, generación de código, resolución de errores y decisiones de diseño. Ver `prompts/prompts-relevantes.md` para el registro completo.
